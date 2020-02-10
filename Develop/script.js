@@ -184,7 +184,7 @@ function generatePassword(){
   } 
 
   else if (lowerCheck === true && upperCheck === false && specCharCheck === true && numberCheck === false) {
-    lengthEach = howLong/3;
+    lengthEach = howLong/2;
     lengthEach = Math.floor(lengthEach);
     for (var i=0; i< lengthEach; i++){
       passwordWill = passwordWill + lowerLetter[abcGen()] + specChar[numCharGen()];
