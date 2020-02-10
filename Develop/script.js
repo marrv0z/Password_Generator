@@ -187,8 +187,8 @@ function generatePassword(){
     for (var i=0; i< lengthEach; i++){
       passwordWill = passwordWill + lowerLetter[abcGen()] + specChar[numCharGen()] + number[numCharGen()];
     }
-    while (passwordWill.length !== howLong){
-      passwordWill = passwordWill + lowerLetter[abcGen()];
+    while (passwordWill.length < howLong){
+      passwordWill = passwordWill + number[numCharGen()];
     }
   } 
 
