@@ -169,6 +169,17 @@ function generatePassword(){
       passwordWill = passwordWill + specChar[numCharGen()];
     }
   }
+
+  else if (lowerCheck === true && upperCheck === false && specCharCheck === true && numberCheck === false) {
+    lengthEach = howLong/4;
+    lengthEach = Math.floor(lengthEach);
+    for (var i=0; i< lengthEach; i++){
+      passwordWill = passwordWill + lowerLetter[abcGen()] + specChar[numCharGen()];
+    }
+    while (passwordWill.length < howLong){
+      passwordWill = passwordWill + specChar[numCharGen()];
+    }
+  }
   
   else if (lowerCheck === true && upperCheck === false && specCharCheck === true && numberCheck === true) {
     lengthEach = howLong/3;
@@ -179,20 +190,10 @@ function generatePassword(){
     while (passwordWill.length !== howLong){
       passwordWill = passwordWill + lowerLetter[abcGen()];
     }
-
-    
   } 
 
-  else if (lowerCheck === true && upperCheck === false && specCharCheck === true && numberCheck === false) {
-    lengthEach = howLong/2;
-    lengthEach = Math.floor(lengthEach);
-    for (var i=0; i< lengthEach; i++){
-      passwordWill = passwordWill + lowerLetter[abcGen()] + specChar[numCharGen()];
-    }
-    while (passwordWill.length !== howLong){
-      passwordWill = passwordWill + lowerLetter[abcGen()];
-    }
-  }
+  
+
   // in case they choose all false, the password generator will not work, and the user will have to click the button again
   else{
     alert("Sorry, your choices do not qualify to generate a password, please try again.");
