@@ -192,7 +192,16 @@ function generatePassword(){
     }
   } 
 
-  
+  else if (lowerCheck === true && upperCheck === true && specCharCheck === false && numberCheck === true) {
+    lengthEach = howLong/3;
+    lengthEach = Math.floor(lengthEach);
+    for (var i=0; i< lengthEach; i++){
+      passwordWill = passwordWill + lowerLetter[abcGen()];
+    }
+    while (passwordWill.length < howLong){
+      passwordWill = passwordWill + lowerLetter[abcGen()] + upperLetter[abcGen()] + number[numCharGen()];
+    }
+  }
 
   // in case they choose all false, the password generator will not work, and the user will have to click the button again
   else{
